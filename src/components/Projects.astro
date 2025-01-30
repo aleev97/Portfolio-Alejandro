@@ -1,0 +1,171 @@
+---
+import TypeScript from "../components/Icons/Typescript.astro";
+import Html5 from "../components/Icons/Html.astro";
+import Taylwind from "../components/Icons/Taylwind.astro";
+import Node from "../components/Icons/Node.astro";
+import React from "../components/Icons/React.astro";
+import Vite from "../components/Icons/Vite.astro";
+import JavaScript from "../components/Icons/JavaScript.astro";
+import Css from "../components/Icons/Css.astro";
+import GitHub from "../components/Icons/GitHub.astro";
+import Redux from "../components/Icons/Redux.astro";
+
+const TAGS = {
+    TYPESCRIPT: {
+        name: "TypeScript",
+        icon: TypeScript,
+        class: "bg-blue-500/30 text-with/80 backdrop-blur-md",
+    },
+    HTML5: {
+        name: "HTML5",
+        icon: Html5,
+        class: "bg-orange-500/10 text-with/80 backdrop-blur-md",
+    },
+    TAYLWIND: {
+        name: "TaylwindCss",
+        icon: Taylwind,
+        class: "bg-sky-500/10 text-with/80 backdrop-blur-md",
+    },
+    NODE: {
+        name: "Node.js",
+        icon: Node,
+        class: "bg-green-500/10 text-with/80 backdrop-blur-md",
+    },
+    REACT: {
+        name: "React",
+        icon: React,
+        class: "bg-sky-200/10 text-with/80 backdrop-blur-md",
+    },
+    VITE: {
+        name: "Vite",
+        icon: Vite,
+        class: "bg-yellow-500/10 text-with/80 backdrop-blur-md",
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        icon: JavaScript,
+        class: "bg-yellow-500/10 text-with/80 backdrop-blur-md",
+    },
+    CSS: {
+        name: "CSS",
+        icon: Css,
+        class: "bg-blue-500/10 text-with/80 backdrop-blur-md",
+    },
+    GUITHUB: {
+        name: "Guithub",
+        icon: Css,
+        class: "bg-black text-with/80 backdrop-blur-md",
+    },
+    REDUX: {
+        name: "Redux.js",
+        icon: Redux,
+        class: "bg-violet-300/70 text-with/80 backdrop-blur-md",
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Lista de tareas",
+        description:
+            "App  de gestión de tareas utilizando LocalStorage para guardar los datos. Permite personalizar tareas con colores, tipografía y prioridades, además de visualizarlas por estados. También incluye opciones para editar, eliminar tareas y añadir límites de tiempo",
+        github: "https://github.com/aleev97/Tareas-app",
+        image: "/public/projects/Tasks.png",
+        tags: [
+            TAGS.TYPESCRIPT,
+            TAGS.HTML5,
+            TAGS.TAYLWIND,
+            TAGS.NODE,
+            TAGS.REACT,
+            TAGS.VITE,
+        ],
+    },
+    {
+        title: "Ta Te Ti",
+        description:
+            "juego de TA TE TI con React. El tablero alterna los turnos, detecta ganadores o empates, y utiliza una IA para los movimientos en modo contra la máquina. Incluye opciones para reiniciar el juego, cambiar el modo, y guarda el estado en localStorage. ",
+        github: "https://github.com/aleev97/ta-te-ti",
+
+        image: "/public/projects/tateti.png",
+        tags: [TAGS.JAVASCRIPT, TAGS.HTML5, TAGS.CSS, TAGS.NODE],
+    },
+    {
+        title: "Weather-App",
+        description:
+            "App del clima para una ciudad seleccionada, utiliza estados para almacenar los países, las ciudades y la información del clima. ",
+        github: "https://github.com/aleev97/weather_app",
+        image: "/public/projects/weather.png",
+        tags: [
+            TAGS.VITE,
+            TAGS.JAVASCRIPT,
+            TAGS.REACT,
+            TAGS.NODE,
+            TAGS.TYPESCRIPT,
+        ],
+    },
+    {
+        title: "Salvando Huellas",
+        description:
+            "Refugio de animales, donde se pueden ver los perros que hay en adopción, enviar formulario en caso de querer adoptar, también cuenta con un Petshop, donde se puede comprar alimentos y accesorios.",
+        github: "https://github.com/aleev97/PF-salvando-huellas",
+        image: "/public/projects/SalvandoHuellas.png",
+        tags: [
+            TAGS.VITE,
+            TAGS.JAVASCRIPT,
+            TAGS.REACT,
+            TAGS.NODE,
+            TAGS.TYPESCRIPT,
+            TAGS.HTML5,
+            TAGS.REDUX,
+        ],
+    },
+];
+---
+
+<div class="flex flex-col gap-y-28">
+    {PROJECTS.map(({ image, title, description, tags, github }) => (
+        <article class="flex flex-col space-x-0 space-y-10 md:flex-row md:space-x-3 md:space-y-0">
+<div class="w-full md:w-1/2">
+  <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 overflow-hidden rounded-xl sm:rounded-xl transition-all duration-700 ease-in-out transform shadow-lg hover:scale-105 hover:shadow-2xl hover:border-gray-600 group">
+    <img
+      class="object-cover object-center w-full h-56 transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-90"
+      loading="lazy"
+      src={image}
+      alt={`Captura de pantalla del proyecto ${title}`}
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+  </div>
+</div>
+
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-3xl font-bold text-yellow-400"> {title}</h3>
+                <div class="flex flex-wrap mt-2">
+                    <ul class="flex flex-row mb-2 gap-x-2">
+                        {tags.map(({ icon: Icon, name, class: tagClass }) => (
+                            <li>
+                                <span
+                                    class={`flex items-center gap-2 rounded-full text-xs font-normal ${tagClass} py-1 px-2 shadow-md transition-all transform hover:scale-110 hover:shadow-lg`}
+                                >
+                                    {Icon && <Icon className="w-5 h-5" />}
+                                    {name}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    <div class="mt-1 text-gray-300 dark:text-gray-400">
+                        {description}
+                    </div>
+                    <footer class="flex items-end justify-start mt-4 gap-x-4">
+                        <a
+                            class="inline-flex items-center gap-2 px-1 py-1 text-sm font-semibold text-blue-600 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-white dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700 focus:ring-2 focus:ring-yellow-500 transition"
+                            href={github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <GitHub class="w-5 h-5" /> Ver Repositorio
+                        </a>
+                    </footer>
+                </div>
+            </div>
+        </article>
+    ))}
+</div>

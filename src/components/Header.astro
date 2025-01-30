@@ -1,0 +1,89 @@
+<header
+    class="fixed top-4 left-1/2 -translate-x-1/2 z-10 w-fit transition-colors duration-300 ease-in-out px-4 py-2 rounded-full"
+    id="navbar"
+>
+    <nav
+        class="flex justify-center items-center px-4 h-8 py-2 text-lg font-medium text-gray-200 rounded-full"
+    >
+        <a
+            class="nav-link px-4 py-2 mx-2 transition hover:text-sky-400"
+            href="#experiencia"
+            aria-label="experiencia"
+        >
+            Experiencia
+        </a>
+        <a
+            class="nav-link px-4 py-2 mx-2 transition hover:text-sky-400"
+            href="#proyectos"
+            aria-label="proyectos"
+        >
+            Proyectos
+        </a>
+        <a
+            class="nav-link px-4 py-2 mx-2 transition hover:text-sky-400"
+            href="#sobre-mi"
+            aria-label="sobre-mi"
+        >
+            Sobre mí
+        </a>
+        <a
+            class="nav-link px-4 py-2 mx-2 transition hover:text-sky-400"
+            href="#"
+            aria-label="contacto"
+        >
+            Contacto
+        </a>
+    </nav>
+</header>
+
+<script>
+    document.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add("navbar-scrolled");
+            } else {
+                navbar.classList.remove("navbar-scrolled");
+            }
+        }
+
+        let currentSection = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute("id") || "";
+            }
+        });
+
+        navLinks.forEach((link) => {
+            if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("text-sky-400");
+            } else {
+                link.classList.remove("text-sky-400");
+            }
+        });
+    });
+</script>
+
+<style>
+    body {
+        scroll-behavior: smooth;
+    }
+
+    section {
+        padding: 100px 20px;
+        height: 100vh;
+    }
+
+    .navbar-scrolled {
+        background-color: rgba(0, 63, 146, 0.13);
+        border: 0.5px solid rgba(0, 63, 146, 0.3);
+        backdrop-filter: blur(20px);
+        transition: background-color 0.3s ease-in-out;
+    }
+</style>
+

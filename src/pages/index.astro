@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Social from "../components/Social.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import LinkedInIcon from "../components/Icons/LinkedIn.astro";
+import MailIcon from "../components/Icons/Mail.astro";
+import Briefcase from "../components/Icons/Briefcase.astro";
+import CodeIcon from "../components/Icons/Code.astro";
+import MeIcon from "../components/Icons/Me.astro";
+import Dowloand from "../components/Icons/Dowloand.astro";
+---
+
+<Layout
+	title="Portfolio de Alejandro Valverde - Desarrollador y programador Web"
+	description="Listo para resolver cualquier Desafio"
+>
+	<main class="px-4">
+		<SectionContainer
+			class="py-16 md:py-40 scroll-m-20 w-full mx-0 container lg:max-w-4xl md:max-w-2xl ml-60"
+		>
+			<div class="flex gap-6 mb-4">
+				<img
+					class="rounded-full shadow-lg size-20"
+					src="https://scontent.fmdz2-2.fna.fbcdn.net/v/t39.30808-6/426478253_2686427821533862_8070774399576027291_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHzx6hgmWZVxD52IBHjBKFQNd9rif0xPCM132uJ_TE8I9Ptpngrew9rIWPCeTdxadEGqPRl7zbRWuD0WOfMM347&_nc_ohc=ByyGKPeqnWMQ7kNvgH8BKGB&_nc_oc=AdiB0ly9siHWl-pm44hFFJOzDIoQJE0eu2uldCqZdQ5iP7pYlNjfSxIrnW8NAD-7tcXbhF2xEQ6p_HBBKmy_3zOL&_nc_zt=23&_nc_ht=scontent.fmdz2-2.fna&_nc_gid=AN3wyutZ0bmJVFpNZyZcXy_&oh=00_AYD-hgTNFlD93YbqCi2L9EHepidiJmkSpjbG59lZoYRFKw&oe=679CA4EF"
+					alt="ale photo"
+				/>
+				<a
+				class="flex items-center transition md:justify-center md:hover:scale-105"
+				href="https://www.linkedin.com/in/alejandro-valverde-43a727232/"
+				target="_blank"
+				rel="noopener"
+				aria-label="Ir a mi perfil de LinkedIn"
+				>
+					<div class="flex items-center">
+						<span
+							class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+						>
+							<span
+								class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+							></span>
+							<div
+							class="inline-flex items-center justify-center w-full px-5 py-1 text-lg text-black bg-sky-500/50 rounded-full cursor-pointer backdrop-blur-md shadow-lg hover:bg-sky-500/70 transition-all duration-300"
+							>
+							Disponible para trabajar
+						  </div>
+						  
+						</span>
+					</div>
+				</a>
+			</div>
+			<h1
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				¡Hola!, soy Alejandro Valverde
+			</h1>
+			<h2
+				class="text-xl lg:text-2xl leading-relaxed max-w-[700px] space-y-2"
+			>
+				<span class="block text-3xl text-yellow-300 opacity-90"
+					>Desarrollador web.</span
+				>
+				<span class="block text-white/90 font-medium"
+					>Creciendo cada día más.</span
+				>
+				<span class="block text-blue-400 font-medium"
+					>De Mendoza, Argentina.</span
+				>
+				<span class="text-xl block text-white opacity-90">
+					Creo soluciones web eficientes, escalables y enfocadas en
+					resultados únicos.
+				</span>
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<Social href="https://www.linkedin.com/in/alejandro-valverde-43a727232/">
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</Social>
+				<Social href="mailto: valverdealejandro327@gmail.com">
+					<MailIcon class="size-4 md:size-6" />
+					Contáctame
+				</Social>
+				<!-- Botón de descarga del CV -->
+				<Social href="/public/Curriculum/CV Alejandro Valverde - Full Stack Developer.pdf" download>
+					<Dowloand class="size-4 md:size-6" />
+					<button class="btn-download">
+						Descarga mi C.V
+					</button>
+				</Social>
+			</nav>
+			
+		</SectionContainer>
+
+		<SectionContainer
+			id="experiencia"
+			data-section="experiencia"
+			class="py-10 md:py-2 scroll-m-20 w-full mx-0 container lg:max-w-4xl md:max-w-2xl ml-60"
+		>
+			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-9" />
+				Mi Experiencia
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer
+			id="proyectos"
+			data-section="proyectos"
+			class="py-10 md:py-20 scroll-m-20 w-full mx-0 container lg:max-w-4xl md:max-w-2xl ml-60"
+		>
+			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-9" />
+				Mis Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer
+			id="sobre-mi"
+			data-section="sobre-mi"
+			class="py-10 md:py-20 scroll-m-20 w-full mx-0 container lg:max-w-4xl md:max-w-2xl ml-60"
+		>
+			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+				<MeIcon class="size-9" />
+				Sobre mí
+			</h2>
+			<About />
+		</SectionContainer>
+	</main>
+</Layout>

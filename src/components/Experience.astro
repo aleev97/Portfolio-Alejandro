@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        date: "Actualmente",
+        title: "Ingeniería en Sistemas – (UTN)",
+        description:
+            "Desarrollo de habilidades en análisis y diseño de sistemas, programación orientada a objetos y gestión de bases de datos. Participación en proyectos académicos que simulan entornos laborales reales, aplicando metodologías ágiles y herramientas de colaboración como Git. Cursos destacados: Estructura de Datos, Programación Avanzada, y Sistemas Operativos.",
+    },
+    {
+        date: "Marzo 2023",
+        title: "Desarrollo de Aplicaciones web - Soy Henry",
+        description:
+            "Participé en proyectos integrales aplicando conocimientos en JavaScript, React.js, Node.js y PostgreSQL. Adquirí habilidades en diseño de interfaces y desarrollo de backends escalables.",
+    },
+];
+---
+<ol class="relative border-l border-yellow-100 ml-3">
+    {EXPERIENCE.map((experience) => (
+        <li class="mb-12 flex items-start">
+            <div class="mt-4 w-5 h-5 bg-yellow-400 rounded-full -ml-3 border-4 border-yellow-400 transition-all hover:scale-150" />
+            <div class="flex flex-col w-full ml-6">
+                <div class="w-full mb-4">
+                    <h3 class="text-3xl font-semibold text-yellow-400 mt-2">{experience.title}</h3>
+                    <time class="p-4 block text-2xl font-bold leading-none text-blue-500">{experience.date}</time>
+                </div>
+                <div class="w-full pl-24">
+                    <p class="text-xl font-light text-gray-300 leading-relaxed">{experience.description}</p>
+                </div>
+            </div>
+        </li>
+    ))}
+</ol>
