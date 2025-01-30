@@ -67,9 +67,9 @@ const PROJECTS = [
     {
         title: "Lista de tareas",
         description:
-            "App  de gestión de tareas utilizando LocalStorage para guardar los datos. Permite personalizar tareas con colores, tipografía y prioridades, además de visualizarlas por estados. También incluye opciones para editar, eliminar tareas y añadir límites de tiempo",
+        "App  de gestión de tareas utilizando LocalStorage para guardar los datos. Permite personalizar tareas con colores, tipografía y prioridades, además de visualizarlas por estados. También incluye opciones para editar, eliminar tareas y añadir límites de tiempo",
         github: "https://github.com/aleev97/Tareas-app",
-        image: "/public/projects/Tasks.png",
+        image: "/projects/Tasks.png",
         tags: [
             TAGS.TYPESCRIPT,
             TAGS.HTML5,
@@ -82,18 +82,17 @@ const PROJECTS = [
     {
         title: "Ta Te Ti",
         description:
-            "juego de TA TE TI con React. El tablero alterna los turnos, detecta ganadores o empates, y utiliza una IA para los movimientos en modo contra la máquina. Incluye opciones para reiniciar el juego, cambiar el modo, y guarda el estado en localStorage. ",
+            "Juego de TA TE TI con React. El tablero alterna los turnos, detecta ganadores o empates, y utiliza una IA para los movimientos en modo contra la máquina. Incluye opciones para reiniciar el juego, cambiar el modo, y guarda el estado en localStorage.",
         github: "https://github.com/aleev97/ta-te-ti",
-
-        image: "/public/projects/tateti.png",
+        image: "/projects/Tateti.png", // Ensure this image is in public/projects
         tags: [TAGS.JAVASCRIPT, TAGS.HTML5, TAGS.CSS, TAGS.NODE],
     },
     {
         title: "Weather-App",
         description:
-            "App del clima para una ciudad seleccionada, utiliza estados para almacenar los países, las ciudades y la información del clima. ",
+            "App del clima para una ciudad seleccionada, utiliza estados para almacenar los países, las ciudades y la información del clima.",
         github: "https://github.com/aleev97/weather_app",
-        image: "/public/projects/weather.png",
+        image: "/projects/Weather.png", // Ensure this image is in public/projects
         tags: [
             TAGS.VITE,
             TAGS.JAVASCRIPT,
@@ -107,7 +106,7 @@ const PROJECTS = [
         description:
             "Refugio de animales, donde se pueden ver los perros que hay en adopción, enviar formulario en caso de querer adoptar, también cuenta con un Petshop, donde se puede comprar alimentos y accesorios.",
         github: "https://github.com/aleev97/PF-salvando-huellas",
-        image: "/public/projects/SalvandoHuellas.png",
+        image: "/projects/salvandoHuellas.png", // Ensure this image is in public/projects
         tags: [
             TAGS.VITE,
             TAGS.JAVASCRIPT,
@@ -119,6 +118,7 @@ const PROJECTS = [
         ],
     },
 ];
+
 ---
 
 <div class="flex flex-col gap-y-8">
@@ -126,7 +126,7 @@ const PROJECTS = [
         PROJECTS.map(({ image, title, description, tags, github }) => (
             <article class="flex flex-col space-x-0 space-y-10 md:flex-row md:space-x-3 md:space-y-0">
                 <div class="w-full md:w-1/2">
-                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 overflow-hidden rounded-xl sm:rounded-xl transition-all duration-700 ease-in-out transform shadow-lg hover:scale-105 hover:shadow-2xl hover:border-gray-600 group mb-6 md:mb-6">  <!-- Agregado mb-6 y md:mb-6 -->
+                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 overflow-hidden rounded-xl sm:rounded-xl transition-all duration-700 ease-in-out transform shadow-lg hover:scale-105 hover:shadow-2xl hover:border-gray-600 group mb-6 md:mb-6">
                         <img
                             class="object-cover object-center w-full h-56 transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-90"
                             loading="lazy"
