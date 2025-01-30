@@ -121,51 +121,54 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-y-28">
-    {PROJECTS.map(({ image, title, description, tags, github }) => (
-        <article class="flex flex-col space-x-0 space-y-10 md:flex-row md:space-x-3 md:space-y-0">
-<div class="w-full md:w-1/2">
-  <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 overflow-hidden rounded-xl sm:rounded-xl transition-all duration-700 ease-in-out transform shadow-lg hover:scale-105 hover:shadow-2xl hover:border-gray-600 group">
-    <img
-      class="object-cover object-center w-full h-56 transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-90"
-      loading="lazy"
-      src={image}
-      alt={`Captura de pantalla del proyecto ${title}`}
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-  </div>
-</div>
-
-            <div class="w-full md:w-1/2 md:max-w-lg">
-                <h3 class="text-3xl font-bold text-yellow-400"> {title}</h3>
-                <div class="flex flex-wrap mt-2">
-                    <ul class="flex flex-row mb-2 gap-x-2">
-                        {tags.map(({ icon: Icon, name, class: tagClass }) => (
-                            <li>
-                                <span
-                                    class={`flex items-center gap-2 rounded-full text-xs font-normal ${tagClass} py-1 px-2 shadow-md transition-all transform hover:scale-110 hover:shadow-lg`}
-                                >
-                                    {Icon && <Icon className="w-5 h-5" />}
-                                    {name}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                    <div class="mt-1 text-gray-300 dark:text-gray-400">
-                        {description}
+<div class="flex flex-col gap-y-8">
+    {
+        PROJECTS.map(({ image, title, description, tags, github }) => (
+            <article class="flex flex-col space-x-0 space-y-10 md:flex-row md:space-x-3 md:space-y-0">
+                <div class="w-full md:w-1/2">
+                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 overflow-hidden rounded-xl sm:rounded-xl transition-all duration-700 ease-in-out transform shadow-lg hover:scale-105 hover:shadow-2xl hover:border-gray-600 group mb-6 md:mb-6">  <!-- Agregado mb-6 y md:mb-6 -->
+                        <img
+                            class="object-cover object-center w-full h-56 transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:opacity-90"
+                            loading="lazy"
+                            src={image}
+                            alt={`Captura de pantalla del proyecto ${title}`}
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                     </div>
-                    <footer class="flex items-end justify-start mt-4 gap-x-4">
-                        <a
-                            class="inline-flex items-center gap-2 px-1 py-1 text-sm font-semibold text-blue-600 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-white dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700 focus:ring-2 focus:ring-yellow-500 transition"
-                            href={github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <GitHub class="w-5 h-5" /> Ver Repositorio
-                        </a>
-                    </footer>
                 </div>
-            </div>
-        </article>
-    ))}
-</div> 
+
+                <div class="w-full md:w-1/2 md:max-w-lg">
+                    <h3 class="text-3xl font-bold text-yellow-400"> {title}</h3>
+                    <div class="flex flex-wrap mt-2">
+                        <ul class="flex flex-wrap gap-2 w-full">
+                            {tags.map(({ icon: Icon, name, class: tagClass }, index) => (
+                                <li class="w-[calc(20%-0.4rem)] min-w-[120px]">
+                                    <span
+                                        class={`flex items-center gap-2 rounded-full text-xs font-normal ${tagClass} py-1 px-2 shadow-md transition-all transform hover:scale-110 hover:shadow-lg`}
+                                    >
+                                        {Icon && <Icon className="w-5 h-5" />}
+                                        {name}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div class="mt-1 text-gray-300 dark:text-gray-400">
+                            {description}
+                        </div>
+                        <footer class="flex items-end justify-start mt-4 gap-x-4">
+                            <a
+                                class="inline-flex items-center gap-2 px-1 py-1 text-sm font-semibold text-blue-600 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-white dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700 focus:ring-2 focus:ring-yellow-500 transition"
+                                href={github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <GitHub class="w-5 h-5" /> Ver Repositorio
+                            </a>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+        ))
+    }
+</div>
