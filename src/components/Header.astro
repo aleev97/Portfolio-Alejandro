@@ -87,30 +87,42 @@
     }
 
     /* Ajustes para pantallas pequeñas */
-    @media (max-width: 768px) {
-        #navbar {
-            top: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%; /* Cambié el ancho a 80% en lugar de 100% */
-        }
-
-        nav {
-            flex-wrap: nowrap; /* Asegura que los elementos no se acomoden en varias filas */
-            justify-content: center; /* Asegura que los elementos estén centrados */
-            width: 100%;
-        }
-
-        .nav-link {
-            margin: 0 0.5rem; /* Reduce el margen para que quepan más enlaces */
-        }
+    /* Ajustes para pantallas pequeñas */
+/* Ajustes para pantallas pequeñas */
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #navbar {
+        top: 1rem;
+        width: 90%;
+        height: 40px; /* Reduce la altura del navbar */
+        padding: 0.3rem 1rem; /* Reduce el padding */
     }
 
-    /* Para pantallas muy pequeñas */
-    @media (max-width: 480px) {
-        .nav-link {
-            font-size: 12px; /* Reduce el tamaño de la fuente */
-            padding: 0.5rem;
-        }
+    nav {
+        height: 100%; /* Asegura que los enlaces se ajusten */
+        align-items: center;
     }
+
+    .nav-link {
+        font-size: 14px;
+        margin: 0 0.5rem;
+        padding: 0.2rem 0.6rem; /* Reduce el padding para ocupar menos espacio */
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    #navbar {
+        height: 35px; /* Reduce aún más la altura en móviles pequeños */
+        padding: 0.2rem 0.5rem; /* Reduce el padding */
+    }
+
+    .nav-link {
+        font-size: 12px;
+        margin: 0 0.3rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+
 </style>
